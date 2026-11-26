@@ -1,0 +1,107 @@
+/* Global theme accent override (replaces #6c1cff everywhere) */
+html:root {
+	--accent: #13266E !important;
+}
+
+/* Default full-white page background across all pages */
+html,
+body,
+#c27-site-wrapper {
+	background: #ffffff;
+}
+
+/* Elementor & inline #6c1cff overrides */
+.elementor-118 .elementor-element.elementor-element-efb5de5 .elementor-button {
+	background-color: #13266E;
+}
+
+.cat-icon[style*="#6c1cff" i],
+[style*="#6c1cff" i],
+.cat-icon[style*="rgb(108, 28, 255)" i],
+[style*="rgb(108, 28, 255)" i] {
+	background-color: #13266E !important;
+}
+
+.details-list .li_DJ7V9Cx a:hover i,
+.details-list .li_DJ7V9Cx a:hover .term-icon {
+	background-color: #13266E !important;
+	border-color: #13266E !important;
+}
+
+/* Hero section Search button */
+.elementor-widget-case27-basic-search-widget .featured-search .buttons.button-2.search,
+.elementor-widget-case27-basic-search-widget .featured-search .buttons.button-2.search:hover,
+.elementor-widget-case27-basic-search-widget .featured-search .buttons.button-2.search:focus,
+.elementor-widget-case27-basic-search-widget .featured-search .buttons.button-2.search:visited,
+.elementor-widget-case27-basic-search-widget .featured-search .buttons.button-2.search:visited:hover {
+	background-color: #13266E;
+	background-image: none;
+	color: #ffffff;
+	font-weight: 400;
+}
+
+/* Hero section listing type tabs (Places, Events, Real Estate, Hotels & Accommodation, Citizenship & Residency) */
+.elementor-widget-case27-basic-search-widget .featured-search .fs-tabs .nav-tabs > li > a,
+.elementor-widget-case27-basic-search-widget .featured-search .fs-tabs .nav-tabs > li.active > a {
+	font-weight: 400;
+}
+
+/* Header Add a listing button */
+.c27-main-header .header-button a.buttons.button-1,
+.c27-main-header .header-button a.buttons.button-1:hover,
+.c27-main-header .header-button a.buttons.button-1:focus,
+.c27-main-header .header-button a.buttons.button-1:visited,
+.c27-main-header .header-button a.buttons.button-1:visited:hover,
+.c27-main-header.header-scroll.header-scroll-light-skin .header-button a.buttons.button-1,
+.c27-main-header.header-scroll.header-scroll-light-skin .header-button a.buttons.button-1:hover {
+	background-color: #13266E;
+	background-image: none;
+	color: #ffffff;
+	font-weight: 400;
+}
+
+/* Header dropdown top accent line */
+.c27-main-header .main-nav .i-dropdown:before,
+.c27-main-header ul.dropdown-menu:before {
+	background: #13266E;
+}
+
+/* Scrolled header: white background & #13266E text/icons */
+header.c27-main-header.header.header-scroll.header-scroll-dark-skin .header-skin,
+header.c27-main-header.header.header-scroll .header-skin {
+	background: #ffffff !important;
+	border-bottom: 1px solid #ebebeb !important;
+}
+
+header.c27-main-header.header.header-scroll .i-nav > ul > li > a,
+header.c27-main-header.header.header-scroll .i-nav > ul > li .submenu-toggle i,
+header.c27-main-header.header.header-scroll .main-nav li.has-children:after,
+header.c27-main-header.header.header-scroll .main-nav li.menu-item-has-children:after,
+header.c27-main-header.header.header-scroll .user-area > a,
+header.c27-main-header.header.header-scroll .user-area > span,
+header.c27-main-header.header.header-scroll .user-area .user-profile-name,
+header.c27-main-header.header.header-scroll .user-area .user-profile-name i,
+header.c27-main-header.header.header-scroll .user-area a[data-toggle="modal"],
+header.c27-main-header.header.header-scroll .user-area > i.user-area-icon,
+header.c27-main-header.header.header-scroll .header-search input,
+header.c27-main-header.header.header-scroll .header-search > i,
+header.c27-main-header.header.header-scroll .view-cart-contents > span,
+header.c27-main-header.header.header-scroll .chat-counter-container > span,
+header.c27-main-header.header.header-scroll .search-trigger a i,
+header.c27-main-header.header.header-scroll .mob-sign-in i,
+header.c27-main-header.header.header-scroll .mobile-menu-lines i {
+	color: #13266E;
+}
+
+header.c27-main-header.header.header-scroll .header-search input::placeholder {
+	color: #13266E;
+	opacity: 1;
+}
+
+header.c27-main-header.header.header-scroll .mobile-menu a span {
+	background: #13266E;
+}
+
+header.c27-main-header.header.header-scroll .logo img {
+	filter: brightness(0) saturate(100%) invert(12%) sepia(100%) saturate(2000%) hue-rotate(221deg) brightness(85%);
+}
