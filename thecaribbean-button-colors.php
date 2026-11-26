@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: The Caribbean Button Colors
+ * Plugin Name: The Caribbean Button Colors Addon
  * Description: Applies #13266E background color to the hero section Search button and the header Add a listing button without modifying any other styles.
  * Version: 1.0.0
  * Author: The Caribbean
