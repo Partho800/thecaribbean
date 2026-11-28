@@ -146,16 +146,44 @@
 			box.appendChild(img);
 		});
 
-		// Mobile-only Homepage: merge BROWSE category rows & add "See all" links
-		if (document.body.classList.contains('home') && window.innerWidth <= 767) {
+		// Mobile-only Homepage: merge BROWSE category rows, ensure circle icons & add "See all" links
+		function initMobileHomepage() {
+			if (!document.body.classList.contains('home') || window.innerWidth > 767) return;
+
 			var row1 = document.querySelector('.elementor-element-f19d57c');
 			var row2 = document.querySelector('.elementor-element-13b886e');
-			if (row1 && row2) {
+			if (row1 && row2 && !row1.dataset.guruMerged) {
 				var row2Items = row2.querySelectorAll(':scope > a.elementor-element');
 				row2Items.forEach(function (card) {
 					row1.appendChild(card);
 				});
 				row2.style.display = 'none';
+				row1.dataset.guruMerged = '1';
+			}
+
+			if (row1) {
+				var cards = row1.querySelectorAll(':scope > a.elementor-element');
+				cards.forEach(function (card) {
+					if (card.querySelector('.elementor-icon-wrapper')) return;
+					var titleEl = card.querySelector('.elementor-heading-title');
+					var titleText = titleEl ? titleEl.textContent.toLowerCase() : '';
+					var svgPath = '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>';
+					if (titleText.indexOf('hotel') !== -1 || titleText.indexOf('stay') !== -1) {
+						svgPath = '<path d="M3 7v11m0-4h18m0 4v-6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/>';
+					} else if (titleText.indexOf('carnival') !== -1) {
+						svgPath = '<path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4-3.9-3.8 5.4-.8z"/>';
+					} else if (titleText.indexOf('experience') !== -1) {
+						svgPath = '<circle cx="12" cy="12" r="9"/><polygon points="10 14 14 10 12.5 14.5 9.5 11.5"/>';
+					}
+					var iconWrap = document.createElement('div');
+					iconWrap.className = 'elementor-element elementor-view-default elementor-widget elementor-widget-icon';
+					iconWrap.innerHTML =
+						'<div class="elementor-icon-wrapper"><div class="elementor-icon">' +
+						'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+						svgPath +
+						'</svg></div></div>';
+					card.insertBefore(iconWrap, card.firstChild);
+				});
 			}
 
 			var sectionLinks = [
@@ -173,5 +201,8 @@
 				heading.appendChild(a);
 			});
 		}
+
+		initMobileHomepage();
+		window.addEventListener('resize', initMobileHomepage);
 	});
 })();

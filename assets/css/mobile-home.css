@@ -407,7 +407,18 @@
 	}
 
 	body.home .listing-feed .container-fluid {
-		padding: 0 8px !important;
+		padding: 0 16px !important;
+	}
+
+	body.home .listing-feed .row.section-body {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	body.home .elementor-element-67f3ab5 .elementor-heading-title,
+	body.home .elementor-element-cfc2bbd .elementor-heading-title,
+	body.home .elementor-element-6c381a6 .elementor-heading-title {
+		padding: 0 12px !important;
 	}
 
 	body.home .listing-feed .results-wrapper {
